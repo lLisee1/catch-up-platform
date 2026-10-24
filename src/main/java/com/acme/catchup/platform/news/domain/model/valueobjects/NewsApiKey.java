@@ -8,6 +8,12 @@ public record NewsApiKey(String value) {
     private static final String NOT_BLANK_MESSAGE_KEY="favorite.source.error..newsApiKey.notBlank";
     private static final String SIZE_MESSAGE_KEY="favorite.source.error.newsApiKey.pattern";
 
+    private static final String PATTERN_MESSAGE_KEY="favorite.source.error.newsApiKey.pattern";
 
+    public NeewsApiKey{
+        if(value==null||value.isBlank()) {
+            throw new IllegalArgumentException(NOT_BLANK_MESSAGE_KEY);
+        }
+    }
 
 }
